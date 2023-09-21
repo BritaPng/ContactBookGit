@@ -1,6 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
 
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
@@ -61,6 +60,9 @@ public class ContactBook {
     }
 
     public Contact findContact(int phoneNum){
+        if (searchIndexNum(phoneNum) == -1){
+            return null;
+        }
         return contacts[searchIndexNum(phoneNum)];
     }
 
@@ -117,7 +119,6 @@ public class ContactBook {
             return true;
         }        
         return false;
-
     }
 
 }
